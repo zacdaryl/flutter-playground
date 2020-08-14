@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:playground/keyboard/keyboard_done.dart';
 import 'date/date.dart';
+import 'keyboard/keyboard_done.dart';
+import 'tab/tabbar.dart';
+import 'bottomnav.dart';
 
 void main() => runApp(MyApp());
 
@@ -87,6 +91,34 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text('Date', style: TextStyle(fontSize: 20)),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TabBarSample()),
+                );
+              },
+              child: const Text('TabBar', style: TextStyle(fontSize: 20)),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BottomNav()),
+                );
+              },
+              child: const Text('BottomNav', style: TextStyle(fontSize: 20)),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => KeyboardDoneExample()),
+                );
+              },
+              child: const Text('Keyboard', style: TextStyle(fontSize: 20)),
             ),
           ],
         ),
