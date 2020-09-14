@@ -56,17 +56,21 @@ class _KeyboardDoneExampleState extends State<KeyboardDoneExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('keyboard'),
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: TextField(
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(hintText: 'click to input number'),
-          focusNode: numberFocusNode,
-          keyboardAppearance: Brightness.light,
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('keyboard'),
+        ),
+        body: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: TextField(
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(hintText: 'click to input number'),
+            // focusNode: numberFocusNode,
+            keyboardAppearance: Brightness.light,
+          ),
         ),
       ),
     );
